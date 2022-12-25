@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
 {
-    #[Route('/products', name: 'list', methods: 'GET')]
+    #[Route('/api/products', name: 'list', methods: 'GET')]
     public function list(Request $request, ProductList $handler): Response
     {
         $page = $request->query->get('page');

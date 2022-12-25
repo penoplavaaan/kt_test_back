@@ -21,10 +21,10 @@ trait PagerTrait
      * @param ?int $limit
      * @return int
      */
-    public function getLimit(?int $limit = 15): int
+    public function getLimit(?int $limit = 10): int
     {
-        if ($limit < 1 || $limit > 15) {
-            $limit = 15;
+        if ($limit < 1 || $limit > 150) {
+            $limit = 10;
         }
 
         return (int)$limit;

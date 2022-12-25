@@ -7,55 +7,46 @@ use App\Entity\CategoryRepositoryPersist;
 use App\Entity\CategoryRepositoryRead;
 use App\Entity\Product;
 use App\Entity\ProductRepositoryPersist;
+use App\Message\ProductCreator;
 use App\Message\UploadedFileProcessor;
 use Exception;
+use Prewk\XmlStringStreamer;
+use Psr\Log\LoggerInterface;
 use SimpleXMLElement;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
+use Symfony\Component\Messenger\MessageBusInterface;
 use XMLReader;
 
 #[AsMessageHandler]
 class UploadedFileProcessorHandler
 {
+    public function __construct(
+        private readonly MessageBusInterface $bus
+    )
+    {
+    }
+
     /**
      * @throws Exception
      */
-    public function __invoke(
-        UploadedFileProcessor $fileProcessor,
-        ProductRepositoryPersist $productRepositoryPersist,
-        CategoryRepositoryRead $categoryRepositoryRead,
-        CategoryRepositoryPersist $categoryRepositoryPersist,
-    ): void
+    public function __invoke(UploadedFileProcessor $fileProcessor): void
     {
-        $reader = new XMLReader();
-        $reader->open($fileProcessor->filePath);
-        while($reader->read()) {
-            if ($reader->nodeType !== XMLReader::ELEMENT) {
-                continue;
-            }
+        $streamer = XmlStringStreamer::createStringWalkerParser($fileProcessor->getFilePath());
 
-            if($reader->name == 'product') {
-                $simpleXml = new SimpleXMLElement($reader->readOuterXml());
-
-                $product = new Product();
-
-                $product->setTitle($simpleXml->title);
-                $product->setDescription($simpleXml->description);
-//                $product->setWeight($simpleXml->weight);
-
-                $category = $categoryRepositoryRead->getByName($simpleXml->category);
-
-                if (is_null($category)){
-                    $category = new Category();
-                    $category->setName($simpleXml->category);
-
-                    $categoryRepositoryPersist->save($category);
-                }
-
-                $product->setCategory($category);
-
-                $productRepositoryPersist->save($product);
-                dd($simpleXml);
-            }
+        while ($node = $streamer->getNode()) {
+            $this->bus->dispatch(new ProductCreator($node));
         }
+//        $reader = new XMLReader();
+//        $reader->open($fileProcessor->getFilePath());
+//        while($reader->read()) {
+//            if ($reader->nodeType !== XMLReader::ELEMENT) {
+//                continue;
+//            }
+//
+//            if($reader->name == 'product') {
+//                $simpleXml = $reader->readOuterXml();
+//                $this->bus->dispatch(new ProductCreator($simpleXml));
+//            }
+//        }
     }
 }

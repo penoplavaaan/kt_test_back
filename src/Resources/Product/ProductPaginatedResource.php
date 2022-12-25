@@ -12,6 +12,7 @@ class ProductPaginatedResource extends PaginatedResource
         return array_map(fn($product)=>[
                 'id' => $product['id'],
                 'title' => $product['title'],
+                'weight' => $product['weight'],
                 'description' => $product['description'],
                 'category' => $product['name'],
             ],

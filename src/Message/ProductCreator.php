@@ -12,17 +12,17 @@ use App\Entity\ProductRepositoryRead;
 use SimpleXMLElement;
 use XMLReader;
 
-class UploadedFileProcessor
+class ProductCreator
 {
-    private ?string $filePath;
+    private string $simpleXmlAsString;
 
-    public function __construct(?string $filePath)
+    public function __construct(string $simpleXml)
     {
-        $this->filePath = $filePath;
+        $this->simpleXmlAsString = $simpleXml;
     }
 
-    public function getFilePath(): ?string
+    public function getSimpleXmlAsString(): string
     {
-        return $this->filePath;
+        return $this->simpleXmlAsString;
     }
 }

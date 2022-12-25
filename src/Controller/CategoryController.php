@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CategoryController extends AbstractController
 {
-    #[Route('/categories', name: 'app_category_list', methods: 'GET')]
+    #[Route('/api/categories', name: 'app_category_list', methods: 'GET')]
     public function list(Request $request, CategoryList $handler): Response
     {
         $products = $handler->handle();

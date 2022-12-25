@@ -5,13 +5,26 @@ framework:
 
         transports:
             # https://symfony.com/doc/current/messenger.html#transport-configuration
-             async: '%env(MESSENGER_TRANSPORT_DSN)%'
+             async:
+                dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+                retry_strategy:
+                  max_retries: 0
+                  # задержка в милисекундах
+                  delay: 1000
+                  # делает так, чтобы задержка была дольше перед каждой повторной попыткой
+                  # например, задержка в 1 секунду, 2 секунду, 4 секунду
+                  multiplier: 2
+                  max_delay: 0
+                  # переопределить это все сервисом, который
+                  # реализует Symfony\Component\Messenger\Retry\RetryStrategyInterface
+                  # service: null
              failed: 'doctrine://default?queue_name=failed'
             # sync: 'sync://'
 
         routing:
             # Route your messages to the transports
              'App\Message\UploadedFileProcessor': async
+             'App\Message\ProductCreator': async
 
 # when@test:
 #    framework:

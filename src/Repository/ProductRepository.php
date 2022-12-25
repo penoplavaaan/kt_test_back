@@ -53,6 +53,7 @@ final class ProductRepository extends DoctrineRepository implements ProductRepos
                 'products.id',
                 'products.title',
                 'products.description',
+                'products.weight',
                 'products.category_id',
                 'categories.name'
             ])

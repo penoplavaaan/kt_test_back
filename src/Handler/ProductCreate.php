@@ -11,25 +11,17 @@ use App\Message\UploadedFileProcessor;
 use App\Resources\Product\ProductPaginatedResource;
 use App\Util\PagerTrait;
 use App\Util\Filterable;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 use function Symfony\Component\String\b;
 
 final class ProductCreate
 {
-    private $uploadPath;
-    private MessageBusInterface $bus;
-
     public function __construct(
-        UploadedFileProcessor $fileProcessor,
-        ProductRepositoryPersist $productRepositoryPersist,
-        CategoryRepositoryRead $categoryRepositoryRead,
-        CategoryRepositoryPersist $categoryRepositoryPersist,
-        MessageBusInterface $bus,
-        $uploadPath
+        private MessageBusInterface $bus,
+        private $uploadPath
     )
     {
-        $this->uploadPath = $uploadPath;
-        $this->bus = $bus;
     }
 
     /**
@@ -40,6 +32,6 @@ final class ProductCreate
     {
         $movedFilePath = $this->uploadPath.'/'.$fileName;
 
-//        $this->bus->dispatch(new UploadedFileProcessor($movedFilePath));
+        $this->bus->dispatch(new UploadedFileProcessor($movedFilePath));
     }
 }

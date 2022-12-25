@@ -20,7 +20,8 @@ final class Version20221214101442 extends AbstractMigration
             CREATE TABLE products (
                 id SERIAL PRIMARY KEY,
                 title VARCHAR(255) NOT NULL, 
-                description VARCHAR(255) NOT NULL, 
+                weight integer NOT NULL, 
+                description text NOT NULL, 
                 category_id integer NOT NULL
             )
         ');

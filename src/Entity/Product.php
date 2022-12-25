@@ -75,6 +75,11 @@ class Product
         $this->weight = (int)$weightValue;
     }
 
+    public function getWeight(): int
+    {
+        return $this->weight;
+    }
+
     public function setCategory(Category $category): void
     {
         $this->category = $category;
