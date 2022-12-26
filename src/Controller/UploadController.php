@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UploadController extends AbstractController
 {
-    #[Route('/api/upload', name: 'app_upload', methods: 'POST')]
+    #[Route('/upload', name: 'app_upload', methods: 'POST')]
     public function upload(Request $request, ProductCreate $handler, $uploadPath): Response
     {
         try {
