@@ -36,17 +36,5 @@ class UploadedFileProcessorHandler
         while ($node = $streamer->getNode()) {
             $this->bus->dispatch(new ProductCreator($node));
         }
-//        $reader = new XMLReader();
-//        $reader->open($fileProcessor->getFilePath());
-//        while($reader->read()) {
-//            if ($reader->nodeType !== XMLReader::ELEMENT) {
-//                continue;
-//            }
-//
-//            if($reader->name == 'product') {
-//                $simpleXml = $reader->readOuterXml();
-//                $this->bus->dispatch(new ProductCreator($simpleXml));
-//            }
-//        }
     }
 }
