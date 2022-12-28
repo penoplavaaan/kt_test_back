@@ -22,8 +22,7 @@ use XMLReader;
 class UploadedFileProcessorHandler
 {
     public function __construct(
-        private readonly MessageBusInterface $bus,
-        private readonly LoggerInterface $logger
+        private readonly MessageBusInterface $bus
     )
     {
     }

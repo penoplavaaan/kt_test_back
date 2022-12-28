@@ -40,4 +40,11 @@ class UploadController extends AbstractController
             ], status: Response::HTTP_BAD_REQUEST);
         }
     }
+
+    #[Route('/api/upload-tasks-count', name: 'upload_tasks_count', methods: 'GET')]
+    public function getUploadTasksCount($uploadPath): JsonResponse
+    {
+        $count = count(glob("$uploadPath/*"));
+        return new JsonResponse(data: $count,status: Response::HTTP_OK);
+    }
 }
