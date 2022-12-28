@@ -68,6 +68,7 @@ services:
   nginx:
     container_name: nginx
     image: nginx:stable-alpine
+    restart: unless-stopped
     ports:
       - "8040:80"
     volumes:
@@ -83,6 +84,7 @@ services:
   nginx-front:
     container_name: nginx-front
     image: nginx:stable-alpine
+    restart: unless-stopped
     ports:
       - "8041:80"
     volumes:
