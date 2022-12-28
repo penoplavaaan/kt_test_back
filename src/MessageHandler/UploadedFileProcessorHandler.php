@@ -13,6 +13,7 @@ use Exception;
 use Prewk\XmlStringStreamer;
 use Psr\Log\LoggerInterface;
 use SimpleXMLElement;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Messenger\MessageBusInterface;
 use XMLReader;
@@ -21,7 +22,8 @@ use XMLReader;
 class UploadedFileProcessorHandler
 {
     public function __construct(
-        private readonly MessageBusInterface $bus
+        private readonly MessageBusInterface $bus,
+        private readonly LoggerInterface $logger
     )
     {
     }
@@ -36,5 +38,8 @@ class UploadedFileProcessorHandler
         while ($node = $streamer->getNode()) {
             $this->bus->dispatch(new ProductCreator($node));
         }
+
+        $filesystem = new Filesystem();
+        $filesystem->remove($fileProcessor->getFilePath());
     }
 }
