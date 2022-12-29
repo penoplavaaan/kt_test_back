@@ -41,9 +41,10 @@ class ProductController extends AbstractController
     }
 
     #[Route('/api/products/statistics/download', name: 'statistics-download', methods: 'GET')]
-    public function downloadStatistics(): Response
+    public function downloadStatistics(ProductsStatistics $handler): Response
     {
-        $content = implode("\n", [1,2,3]);
+        $statistics = $handler->handle()->toArray();
+        $content = implode("\n", $statistics);
         $response = new Response($content);
         $response->headers->set('Content-Type', 'text/csv');
 

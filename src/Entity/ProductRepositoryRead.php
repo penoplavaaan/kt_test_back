@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use App\Resources\Statistics\ShowStatisticsResource;
+
 interface ProductRepositoryRead
 {
     public function list(): array;
@@ -9,5 +11,5 @@ interface ProductRepositoryRead
 
     public function count(string $query, ?string $filterBy, ?string $filterValue): int;
 
-    public function getStatistics(): array;
+    public function getStatistics(): ShowStatisticsResource;
 }

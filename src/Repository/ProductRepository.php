@@ -9,6 +9,7 @@ use App\Entity\Category;
 use App\Entity\Product;
 use App\Entity\ProductRepositoryPersist;
 use App\Entity\ProductRepositoryRead;
+use App\Resources\Statistics\ShowStatisticsResource;
 use Doctrine\DBAL\Exception;
 use Doctrine\ORM\AbstractQuery;
 use Doctrine\ORM\NonUniqueResultException;
@@ -114,7 +115,7 @@ final class ProductRepository extends DoctrineRepository implements ProductRepos
      * @throws Exception
      * @throws NoResultException
      */
-    public function getStatistics(): array
+    public function getStatistics(): ShowStatisticsResource
     {
         $productsEntity = $this->getEntityName();
         $categoriesEntity = Category::class;
@@ -159,13 +160,13 @@ ORDER BY count(category_id) ASC
 LIMIT 5")
             ->fetchAllAssociative();
 
-        return [
-            'totalProductCount' => $totalProductCount,
-            'totalProductsWeightKg' => $totalProductsWeight,
-            'avgProductsWeightKg' => $avgProductsWeight,
-            'totalCategoriesCount' => $totalCategoriesCount,
-            'mostPopularCategories' => $mostPopularCategories,
-            'leastPopularCategories' => $leastPopularCategories
-        ];
+        return new ShowStatisticsResource(
+            totalProductCount: $totalProductCount,
+            totalCategoriesCount: $totalCategoriesCount,
+            totalProductsWeightKg: $totalProductsWeight,
+            avgProductsWeight: $avgProductsWeight,
+            mostPopularCategories: $mostPopularCategories,
+            leastPopularCategories: $leastPopularCategories
+        );
     }
 }

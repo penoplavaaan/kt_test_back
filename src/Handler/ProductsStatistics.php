@@ -3,6 +3,7 @@
 namespace App\Handler;
 
 use App\Entity\ProductRepositoryRead;
+use App\Resources\Statistics\ShowStatisticsResource;
 
 class ProductsStatistics
 {
@@ -13,9 +14,9 @@ class ProductsStatistics
     }
 
     /**
-     * @return array
+     * @return ShowStatisticsResource
      */
-    public function handle(): array
+    public function handle(): ShowStatisticsResource
     {
         return $this->repositoryRead->getStatistics();
     }
