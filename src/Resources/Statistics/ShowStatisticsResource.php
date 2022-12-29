@@ -34,13 +34,19 @@ class ShowStatisticsResource
             'Общее количество товаров: ,'.$this->totalProductCount,
             'Общее количество категорий: ,'. $this->totalCategoriesCount,
             'Общая масса товаров (кг): ,'. $this->totalProductsWeightKg,
-            'Средняя масса товаров: ,'. $this->totalProductsWeightKg,
-            'Топ-5 категорий: ',
+            'Средняя масса товаров: ,'. $this->avgProductsWeight,
+            'Топ-5 категорий по количеству товаров: ',
             $this->mostPopularCategories[0]['name'].','.$this->mostPopularCategories[0]['count'],
             $this->mostPopularCategories[1]['name'].','.$this->mostPopularCategories[1]['count'],
             $this->mostPopularCategories[2]['name'].','.$this->mostPopularCategories[2]['count'],
             $this->mostPopularCategories[3]['name'].','.$this->mostPopularCategories[3]['count'],
             $this->mostPopularCategories[4]['name'].','.$this->mostPopularCategories[4]['count'],
+            'Топ-5 категорий по количеству товаров (по убыванию): ',
+            $this->leastPopularCategories[0]['name'].','.$this->leastPopularCategories[0]['count'],
+            $this->leastPopularCategories[1]['name'].','.$this->leastPopularCategories[1]['count'],
+            $this->leastPopularCategories[2]['name'].','.$this->leastPopularCategories[2]['count'],
+            $this->leastPopularCategories[3]['name'].','.$this->leastPopularCategories[3]['count'],
+            $this->leastPopularCategories[4]['name'].','.$this->leastPopularCategories[4]['count'],
         ];
     }
 }
