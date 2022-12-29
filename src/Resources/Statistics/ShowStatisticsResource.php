@@ -28,7 +28,7 @@ class ShowStatisticsResource
         $this->leastPopularCategories = $leastPopularCategories;
     }
 
-    public function toArray(): array
+    public function toCsvArray(): array
     {
         return [
             'Общее количество товаров: ,'.$this->totalProductCount,
