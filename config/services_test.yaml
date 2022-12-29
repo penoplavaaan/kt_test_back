@@ -1,5 +1,4 @@
 services:
-  # redefine the alias as it should be while making it public
   App\Entity\ProductRepositoryRead:
     alias: App\Repository\ProductRepository
     public: true
@@ -7,8 +6,8 @@ services:
     alias: App\Repository\ProductRepository
     public: true
   App\Entity\CategoryRepositoryPersist:
-    alias: App\Repository\ProductRepository
+    alias: App\Repository\CategoryRepository
     public: true
   App\Entity\CategoryRepositoryRead:
-    alias: App\Repository\ProductRepository
+    alias: App\Repository\CategoryRepository
     public: true

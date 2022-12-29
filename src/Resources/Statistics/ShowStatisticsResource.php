@@ -30,7 +30,9 @@ class ShowStatisticsResource
 
     public function toCsvArray(): array
     {
-        return [
+        return count($this->mostPopularCategories) !== 5
+            ? []
+            : [
             'Общее количество товаров: ,'.$this->totalProductCount,
             'Общее количество категорий: ,'. $this->totalCategoriesCount,
             'Общая масса товаров (кг): ,'. $this->totalProductsWeightKg,

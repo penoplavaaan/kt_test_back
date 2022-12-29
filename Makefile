@@ -1,12 +1,20 @@
 up-d: ## Поднять контейнеры
 	docker-compose up -d
 
-build: ## Поднять контейнеры
+build: ## Сбилдить контейнеры
 	docker-compose up -d --build && docker-compose exec php ./vendor/bin/phpunit --coverage-html html
 
-test:
-	docker-compose exec php composer test
-#&& docker-compose exec php  composer update-badges
+migrate: ## Миграции
+	docker-compose exec php composer migrate
+
+test: ##Тест html
+	rm -f .phpunit.result.cache && rm -f -R ./html && docker-compose exec php composer test
+
+test-xml: ##Тест xml
+	rm -f .phpunit.result.cache && rm -f coverage.xml && docker-compose exec php composer test-xml
+
+badge: ## Обновление бейджика покрытия
+	rm -f .github/badges/coverage.svg && docker-compose exec php composer update-badges
 
 server: ## Войти в контейнер сервера
 	docker-compose exec php bash
