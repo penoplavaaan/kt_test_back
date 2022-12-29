@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/web/src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/style.css" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/var/www/web/src</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Entity/Category.php.html#13">App\Entity\Category</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Product.php.html#15">App\Entity\Product</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Message/ProductCreator.php.html#15">App\Message\ProductCreator</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Message/UploadedFileProcessor.php.html#15">App\Message\UploadedFileProcessor</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MessageHandler/ProductCreatorHandler.php.html#18">App\MessageHandler\ProductCreatorHandler</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MessageHandler/UploadedFileProcessorHandler.php.html#21">App\MessageHandler\UploadedFileProcessorHandler</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Reader/Csv.php.html#7">App\Reader\Csv</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Resources/Product/ProductPaginatedResource.php.html#8">App\Resources\Product\ProductPaginatedResource</a></td><td class="text-right">16%</td></tr>
+       <tr><td><a href="Controller/UploadController.php.html#18">App\Controller\UploadController</a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="Doctrine/DoctrineRepository.php.html#11">App\Doctrine\DoctrineRepository</a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="Handler/ProductCreate.php.html#18">App\Handler\ProductCreate</a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="Resources/Statistics/ShowStatisticsResource.php.html#5">App\Resources\Statistics\ShowStatisticsResource</a></td><td class="text-right">40%</td></tr>
+       <tr><td><a href="Handler/ProductList.php.html#11">App\Handler\ProductList</a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="Repository/CategoryRepository.php.html#19">App\Repository\CategoryRepository</a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="Repository/ProductRepository.php.html#21">App\Repository\ProductRepository</a></td><td class="text-right">82%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Entity/Product.php.html#15">App\Entity\Product</a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Controller/UploadController.php.html#18">App\Controller\UploadController</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="MessageHandler/ProductCreatorHandler.php.html#18">App\MessageHandler\ProductCreatorHandler</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="MessageHandler/UploadedFileProcessorHandler.php.html#21">App\MessageHandler\UploadedFileProcessorHandler</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Reader/Csv.php.html#7">App\Reader\Csv</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Repository/ProductRepository.php.html#21">App\Repository\ProductRepository</a></td><td class="text-right">10</td></tr>
+       <tr><td><a href="Resources/Statistics/ShowStatisticsResource.php.html#5">App\Resources\Statistics\ShowStatisticsResource</a></td><td class="text-right">4</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Doctrine/DoctrineRepository.php.html#32"><abbr title="App\Doctrine\DoctrineRepository::persist">persist</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Doctrine/DoctrineRepository.php.html#38"><abbr title="App\Doctrine\DoctrineRepository::repository">repository</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Category.php.html#27"><abbr title="App\Entity\Category::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Product.php.html#54"><abbr title="App\Entity\Product::setTitle">setTitle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Product.php.html#59"><abbr title="App\Entity\Product::setDescription">setDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Product.php.html#64"><abbr title="App\Entity\Product::setWeight">setWeight</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Product.php.html#78"><abbr title="App\Entity\Product::getWeight">getWeight</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Product.php.html#83"><abbr title="App\Entity\Product::setCategory">setCategory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handler/ProductCreate.php.html#31"><abbr title="App\Handler\ProductCreate::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handler/ProductList.php.html#39"><abbr title="App\Handler\ProductList::getFilterableFields">getFilterableFields</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handler/ProductList.php.html#44"><abbr title="App\Handler\ProductList::canFilterBy">canFilterBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Message/ProductCreator.php.html#19"><abbr title="App\Message\ProductCreator::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Message/ProductCreator.php.html#24"><abbr title="App\Message\ProductCreator::getSimpleXmlAsString">getSimpleXmlAsString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Message/UploadedFileProcessor.php.html#19"><abbr title="App\Message\UploadedFileProcessor::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Message/UploadedFileProcessor.php.html#24"><abbr title="App\Message\UploadedFileProcessor::getFilePath">getFilePath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MessageHandler/ProductCreatorHandler.php.html#21"><abbr title="App\MessageHandler\ProductCreatorHandler::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MessageHandler/ProductCreatorHandler.php.html#32"><abbr title="App\MessageHandler\ProductCreatorHandler::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MessageHandler/UploadedFileProcessorHandler.php.html#24"><abbr title="App\MessageHandler\UploadedFileProcessorHandler::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MessageHandler/UploadedFileProcessorHandler.php.html#33"><abbr title="App\MessageHandler\UploadedFileProcessorHandler::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Reader/Csv.php.html#11"><abbr title="App\Reader\Csv::read">read</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CategoryRepository.php.html#50"><abbr title="App\Repository\CategoryRepository::getByName">getByName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CategoryRepository.php.html#59"><abbr title="App\Repository\CategoryRepository::save">save</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ProductRepository.php.html#34"><abbr title="App\Repository\ProductRepository::list">list</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ProductRepository.php.html#108"><abbr title="App\Repository\ProductRepository::save">save</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Resources/Product/ProductPaginatedResource.php.html#10"><abbr title="App\Resources\Product\ProductPaginatedResource::formatData">formatData</abbr></a></td><td class="text-right">16%</td></tr>
+       <tr><td><a href="Resources/Statistics/ShowStatisticsResource.php.html#31"><abbr title="App\Resources\Statistics\ShowStatisticsResource::toCsvArray">toCsvArray</abbr></a></td><td class="text-right">18%</td></tr>
+       <tr><td><a href="Controller/UploadController.php.html#20"><abbr title="App\Controller\UploadController::upload">upload</abbr></a></td><td class="text-right">23%</td></tr>
+       <tr><td><a href="Util/PagerTrait.php.html#38"><abbr title="App\Util\PagerTrait::getOffset">getOffset</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Repository/ProductRepository.php.html#85"><abbr title="App\Repository\ProductRepository::count">count</abbr></a></td><td class="text-right">83%</td></tr>
+       <tr><td><a href="Repository/ProductRepository.php.html#52"><abbr title="App\Repository\ProductRepository::index">index</abbr></a></td><td class="text-right">86%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Reader/Csv.php.html#11"><abbr title="App\Reader\Csv::read">read</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/UploadController.php.html#20"><abbr title="App\Controller\UploadController::upload">upload</abbr></a></td><td class="text-right">11</td></tr>
+       <tr><td><a href="Entity/Product.php.html#64"><abbr title="App\Entity\Product::setWeight">setWeight</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MessageHandler/ProductCreatorHandler.php.html#32"><abbr title="App\MessageHandler\ProductCreatorHandler::__invoke">__invoke</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MessageHandler/UploadedFileProcessorHandler.php.html#33"><abbr title="App\MessageHandler\UploadedFileProcessorHandler::__invoke">__invoke</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Resources/Statistics/ShowStatisticsResource.php.html#31"><abbr title="App\Resources\Statistics\ShowStatisticsResource::toCsvArray">toCsvArray</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="Util/PagerTrait.php.html#38"><abbr title="App\Util\PagerTrait::getOffset">getOffset</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Repository/ProductRepository.php.html#85"><abbr title="App\Repository\ProductRepository::count">count</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Repository/ProductRepository.php.html#52"><abbr title="App\Repository\ProductRepository::index">index</abbr></a></td><td class="text-right">3</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.19</a> using <a href="https://secure.php.net/" target="_top">PHP 8.1.13</a> and <a href="https://phpunit.de/">PHPUnit 9.5.27</a> at Thu Dec 29 15:23:25 UTC 2022.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js" type="text/javascript"></script>
+  <script src="_js/d3.min.js" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([7,0,1,0,3,1,0,0,2,1,1,6], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([24,0,2,1,0,0,0,0,1,2,0,26], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Controller\/CategoryController.php.html#12\">App\\Controller\\CategoryController<\/a>"],[100,3,"<a href=\"Controller\/ProductController.php.html#17\">App\\Controller\\ProductController<\/a>"],[33.33333333333333,5,"<a href=\"Controller\/UploadController.php.html#18\">App\\Controller\\UploadController<\/a>"],[33.33333333333333,4,"<a href=\"Doctrine\/DoctrineRepository.php.html#11\">App\\Doctrine\\DoctrineRepository<\/a>"],[0,1,"<a href=\"Entity\/Category.php.html#13\">App\\Entity\\Category<\/a>"],[0,6,"<a href=\"Entity\/Product.php.html#15\">App\\Entity\\Product<\/a>"],[100,2,"<a href=\"Handler\/CategoryList.php.html#12\">App\\Handler\\CategoryList<\/a>"],[33.33333333333333,2,"<a href=\"Handler\/ProductCreate.php.html#18\">App\\Handler\\ProductCreate<\/a>"],[77.77777777777779,4,"<a href=\"Handler\/ProductList.php.html#11\">App\\Handler\\ProductList<\/a>"],[100,2,"<a href=\"Handler\/ProductsStatistics.php.html#8\">App\\Handler\\ProductsStatistics<\/a>"],[0,2,"<a href=\"Message\/ProductCreator.php.html#15\">App\\Message\\ProductCreator<\/a>"],[0,2,"<a href=\"Message\/UploadedFileProcessor.php.html#15\">App\\Message\\UploadedFileProcessor<\/a>"],[0,3,"<a href=\"MessageHandler\/ProductCreatorHandler.php.html#18\">App\\MessageHandler\\ProductCreatorHandler<\/a>"],[0,3,"<a href=\"MessageHandler\/UploadedFileProcessorHandler.php.html#21\">App\\MessageHandler\\UploadedFileProcessorHandler<\/a>"],[0,3,"<a href=\"Reader\/Csv.php.html#7\">App\\Reader\\Csv<\/a>"],[77.77777777777779,4,"<a href=\"Repository\/CategoryRepository.php.html#19\">App\\Repository\\CategoryRepository<\/a>"],[82.8125,10,"<a href=\"Repository\/ProductRepository.php.html#21\">App\\Repository\\ProductRepository<\/a>"],[100,1,"<a href=\"Resources\/MetaPaginatedResource.php.html#5\">App\\Resources\\MetaPaginatedResource<\/a>"],[100,1,"<a href=\"Resources\/PaginatedResource.php.html#5\">App\\Resources\\PaginatedResource<\/a>"],[16.666666666666664,1,"<a href=\"Resources\/Product\/ProductPaginatedResource.php.html#8\">App\\Resources\\Product\\ProductPaginatedResource<\/a>"],[40.909090909090914,3,"<a href=\"Resources\/Statistics\/ShowStatisticsResource.php.html#5\">App\\Resources\\Statistics\\ShowStatisticsResource<\/a>"],[90.9090909090909,9,"<a href=\"Util\/PagerTrait.php.html#5\">App\\Util\\PagerTrait<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Controller\/CategoryController.php.html#14\">App\\Controller\\CategoryController::list<\/a>"],[100,1,"<a href=\"Controller\/ProductController.php.html#19\">App\\Controller\\ProductController::list<\/a>"],[100,1,"<a href=\"Controller\/ProductController.php.html#35\">App\\Controller\\ProductController::getStatistics<\/a>"],[100,1,"<a href=\"Controller\/ProductController.php.html#43\">App\\Controller\\ProductController::downloadStatistics<\/a>"],[23.076923076923077,4,"<a href=\"Controller\/UploadController.php.html#20\">App\\Controller\\UploadController::upload<\/a>"],[100,1,"<a href=\"Controller\/UploadController.php.html#47\">App\\Controller\\UploadController::getUploadTasksCount<\/a>"],[100,1,"<a href=\"Doctrine\/DoctrineRepository.php.html#13\">App\\Doctrine\\DoctrineRepository::__construct<\/a>"],[100,0,"<a href=\"Doctrine\/DoctrineRepository.php.html#18\">App\\Doctrine\\DoctrineRepository::getEntityName<\/a>"],[100,1,"<a href=\"Doctrine\/DoctrineRepository.php.html#23\">App\\Doctrine\\DoctrineRepository::em<\/a>"],[0,1,"<a href=\"Doctrine\/DoctrineRepository.php.html#32\">App\\Doctrine\\DoctrineRepository::persist<\/a>"],[0,1,"<a href=\"Doctrine\/DoctrineRepository.php.html#38\">App\\Doctrine\\DoctrineRepository::repository<\/a>"],[0,1,"<a href=\"Entity\/Category.php.html#27\">App\\Entity\\Category::setName<\/a>"],[0,1,"<a href=\"Entity\/Product.php.html#54\">App\\Entity\\Product::setTitle<\/a>"],[0,1,"<a href=\"Entity\/Product.php.html#59\">App\\Entity\\Product::setDescription<\/a>"],[0,2,"<a href=\"Entity\/Product.php.html#64\">App\\Entity\\Product::setWeight<\/a>"],[0,1,"<a href=\"Entity\/Product.php.html#78\">App\\Entity\\Product::getWeight<\/a>"],[0,1,"<a href=\"Entity\/Product.php.html#83\">App\\Entity\\Product::setCategory<\/a>"],[100,1,"<a href=\"Handler\/CategoryList.php.html#14\">App\\Handler\\CategoryList::__construct<\/a>"],[100,1,"<a href=\"Handler\/CategoryList.php.html#23\">App\\Handler\\CategoryList::handle<\/a>"],[100,1,"<a href=\"Handler\/ProductCreate.php.html#20\">App\\Handler\\ProductCreate::__construct<\/a>"],[0,1,"<a href=\"Handler\/ProductCreate.php.html#31\">App\\Handler\\ProductCreate::handle<\/a>"],[100,1,"<a href=\"Handler\/ProductList.php.html#15\">App\\Handler\\ProductList::__construct<\/a>"],[100,1,"<a href=\"Handler\/ProductList.php.html#26\">App\\Handler\\ProductList::handle<\/a>"],[0,1,"<a href=\"Handler\/ProductList.php.html#39\">App\\Handler\\ProductList::getFilterableFields<\/a>"],[0,1,"<a href=\"Handler\/ProductList.php.html#44\">App\\Handler\\ProductList::canFilterBy<\/a>"],[100,1,"<a href=\"Handler\/ProductsStatistics.php.html#10\">App\\Handler\\ProductsStatistics::__construct<\/a>"],[100,1,"<a href=\"Handler\/ProductsStatistics.php.html#19\">App\\Handler\\ProductsStatistics::handle<\/a>"],[0,1,"<a href=\"Message\/ProductCreator.php.html#19\">App\\Message\\ProductCreator::__construct<\/a>"],[0,1,"<a href=\"Message\/ProductCreator.php.html#24\">App\\Message\\ProductCreator::getSimpleXmlAsString<\/a>"],[0,1,"<a href=\"Message\/UploadedFileProcessor.php.html#19\">App\\Message\\UploadedFileProcessor::__construct<\/a>"],[0,1,"<a href=\"Message\/UploadedFileProcessor.php.html#24\">App\\Message\\UploadedFileProcessor::getFilePath<\/a>"],[0,1,"<a href=\"MessageHandler\/ProductCreatorHandler.php.html#21\">App\\MessageHandler\\ProductCreatorHandler::__construct<\/a>"],[0,2,"<a href=\"MessageHandler\/ProductCreatorHandler.php.html#32\">App\\MessageHandler\\ProductCreatorHandler::__invoke<\/a>"],[0,1,"<a href=\"MessageHandler\/UploadedFileProcessorHandler.php.html#24\">App\\MessageHandler\\UploadedFileProcessorHandler::__construct<\/a>"],[0,2,"<a href=\"MessageHandler\/UploadedFileProcessorHandler.php.html#33\">App\\MessageHandler\\UploadedFileProcessorHandler::__invoke<\/a>"],[0,3,"<a href=\"Reader\/Csv.php.html#11\">App\\Reader\\Csv::read<\/a>"],[100,1,"<a href=\"Repository\/CategoryRepository.php.html#24\">App\\Repository\\CategoryRepository::getEntityName<\/a>"],[100,1,"<a href=\"Repository\/CategoryRepository.php.html#32\">App\\Repository\\CategoryRepository::list<\/a>"],[0,1,"<a href=\"Repository\/CategoryRepository.php.html#50\">App\\Repository\\CategoryRepository::getByName<\/a>"],[0,1,"<a href=\"Repository\/CategoryRepository.php.html#59\">App\\Repository\\CategoryRepository::save<\/a>"],[100,1,"<a href=\"Repository\/ProductRepository.php.html#26\">App\\Repository\\ProductRepository::getEntityName<\/a>"],[0,1,"<a href=\"Repository\/ProductRepository.php.html#34\">App\\Repository\\ProductRepository::list<\/a>"],[86.66666666666667,3,"<a href=\"Repository\/ProductRepository.php.html#52\">App\\Repository\\ProductRepository::index<\/a>"],[83.33333333333334,3,"<a href=\"Repository\/ProductRepository.php.html#85\">App\\Repository\\ProductRepository::count<\/a>"],[0,1,"<a href=\"Repository\/ProductRepository.php.html#108\">App\\Repository\\ProductRepository::save<\/a>"],[100,1,"<a href=\"Repository\/ProductRepository.php.html#118\">App\\Repository\\ProductRepository::getStatistics<\/a>"],[100,1,"<a href=\"Resources\/MetaPaginatedResource.php.html#9\">App\\Resources\\MetaPaginatedResource::__construct<\/a>"],[100,1,"<a href=\"Resources\/PaginatedResource.php.html#10\">App\\Resources\\PaginatedResource::__construct<\/a>"],[100,0,"<a href=\"Resources\/PaginatedResource.php.html#16\">App\\Resources\\PaginatedResource::formatData<\/a>"],[16.666666666666664,1,"<a href=\"Resources\/Product\/ProductPaginatedResource.php.html#10\">App\\Resources\\Product\\ProductPaginatedResource::formatData<\/a>"],[100,1,"<a href=\"Resources\/Statistics\/ShowStatisticsResource.php.html#14\">App\\Resources\\Statistics\\ShowStatisticsResource::__construct<\/a>"],[18.75,2,"<a href=\"Resources\/Statistics\/ShowStatisticsResource.php.html#31\">App\\Resources\\Statistics\\ShowStatisticsResource::toCsvArray<\/a>"],[100,2,"<a href=\"Util\/PagerTrait.php.html#11\">App\\Util\\PagerTrait::getPage<\/a>"],[100,3,"<a href=\"Util\/PagerTrait.php.html#24\">App\\Util\\PagerTrait::getLimit<\/a>"],[75,3,"<a href=\"Util\/PagerTrait.php.html#38\">App\\Util\\PagerTrait::getOffset<\/a>"],[100,1,"<a href=\"Util\/PagerTrait.php.html#53\">App\\Util\\PagerTrait::getLastPage<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
