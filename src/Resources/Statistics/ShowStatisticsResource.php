@@ -31,16 +31,16 @@ class ShowStatisticsResource
     public function toArray(): array
     {
         return [
-            ['Общее количество товаров: '.$this->totalProductCount],
-            ['Общее количество категорий: '. $this->totalCategoriesCount],
-            ['Общая масса товаров, кг: '. $this->totalProductsWeightKg],
-            ['Средняя масса товаров: '. $this->totalProductsWeightKg],
-            ['Топ-5 категорий: '],
-            [$this->mostPopularCategories[0]['name'].' - '.$this->mostPopularCategories[0]['count']],
-            [$this->mostPopularCategories[1]['name'].' - '.$this->mostPopularCategories[1]['count']],
-            [$this->mostPopularCategories[2]['name'].' - '.$this->mostPopularCategories[2]['count']],
-            [$this->mostPopularCategories[3]['name'].' - '.$this->mostPopularCategories[3]['count']],
-            [$this->mostPopularCategories[4]['name'].' - '.$this->mostPopularCategories[4]['count']],
+            'Общее количество товаров: '.$this->totalProductCount,
+            'Общее количество категорий: '. $this->totalCategoriesCount,
+            'Общая масса товаров, кг: '. $this->totalProductsWeightKg,
+            'Средняя масса товаров: '. $this->totalProductsWeightKg,
+            'Топ-5 категорий: ',
+            $this->mostPopularCategories[0]['name'].' - '.$this->mostPopularCategories[0]['count'],
+            $this->mostPopularCategories[1]['name'].' - '.$this->mostPopularCategories[1]['count'],
+            $this->mostPopularCategories[2]['name'].' - '.$this->mostPopularCategories[2]['count'],
+            $this->mostPopularCategories[3]['name'].' - '.$this->mostPopularCategories[3]['count'],
+            $this->mostPopularCategories[4]['name'].' - '.$this->mostPopularCategories[4]['count'],
         ];
     }
 }
