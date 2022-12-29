@@ -39,4 +39,14 @@ class ProductController extends AbstractController
 
         return new JsonResponse($products);
     }
+
+    #[Route('/api/products/statistics/download', name: 'statistics-download', methods: 'GET')]
+    public function downloadStatistics(): Response
+    {
+        $content = implode("\n", [1,2,3]);
+        $response = new Response($content);
+        $response->headers->set('Content-Type', 'text/csv');
+
+        return $response;
+    }
 }
