@@ -35,5 +35,6 @@ XML файл со списком продуктов со следующими п
 
 1. make build 
 2. make migrate
-2. make test && make test-xml && make badge
+3. make test && make test-xml && make badge
 
+Дополнительно: [ссылка](https://github.com/penoplavaaan/kt_test_front) на репозиторий с фронтом
