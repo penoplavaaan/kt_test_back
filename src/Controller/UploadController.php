@@ -22,9 +22,9 @@ class UploadController extends AbstractController
     {
         try {
             $file = $request->files->get( 'products');
-            if (is_null($file)){
-                return new JsonResponse(status: Response::HTTP_UNPROCESSABLE_ENTITY);
-            }
+//            if (is_null($file)){
+//                return new JsonResponse(status: Response::HTTP_UNPROCESSABLE_ENTITY);
+//            }
             $ext = $file->guessExtension();
             if ($ext != 'xml'){
                 return new JsonResponse(status: Response::HTTP_UNSUPPORTED_MEDIA_TYPE);
