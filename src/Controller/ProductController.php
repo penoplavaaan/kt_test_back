@@ -2,10 +2,6 @@
 
 namespace App\Controller;
 
-use App\Form\CsvFileType;
-use App\Form\EmployeeType;
-use App\Handler\EmployeeCreate;
-use App\Handler\EmployeeList;
 use App\Handler\ProductList;
 use App\Handler\ProductsStatistics;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
