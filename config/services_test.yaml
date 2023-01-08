@@ -1,4 +1,14 @@
+parameters:
+  env(MESSENGER_TRANSPORT_DSN): 'doctrine://default'
+  test_uploads_directory: '%kernel.project_dir%/tests/test_uploads'
+
 services:
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    bind:
+      $testUploadsDirectory: '%test_uploads_directory%'
   App\Entity\ProductRepositoryRead:
     alias: App\Repository\ProductRepository
     public: true

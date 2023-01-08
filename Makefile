@@ -7,14 +7,11 @@ build: ## Сбилдить контейнеры
 migrate: ## Миграции
 	docker-compose exec php composer migrate
 
-test: ##Тест html
-	rm -f .phpunit.result.cache && rm -f -R ./html && docker-compose exec php composer test
-
-test-xml: ##Тест xml
-	rm -f .phpunit.result.cache && rm -f coverage.xml && docker-compose exec php composer test-xml
-
 badge: ## Обновление бейджика покрытия
 	rm -f .github/badges/coverage.svg && docker-compose exec php composer update-badges
+
+test: ## Запуск тестов
+	docker-compose exec php composer test && make badge
 
 server: ## Войти в контейнер сервера
 	docker-compose exec php bash

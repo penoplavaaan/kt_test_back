@@ -39,12 +39,12 @@
         <include>
             <directory suffix=".php">src</directory>
         </include>
+        <exclude>
+            <directory>src/Doctrine</directory>
+            <directory>src/Entity</directory>
+            <directory>src/Message</directory>
+            <directory>src/MessageHandler</directory>
+        </exclude>
     </coverage>
 
-    <!-- Run `composer require symfony/panther` before enabling this extension -->
-    <!--
-    <extensions>
-        <extension class="Symfony\Component\Panther\ServerExtension" />
-    </extensions>
-    -->
 </phpunit>
