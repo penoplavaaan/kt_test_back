@@ -8,20 +8,16 @@ use App\Entity\CategoryRepositoryRead;
 use App\Entity\Product;
 use App\Entity\ProductRepositoryPersist;
 use App\Message\ProductCreator;
-use App\Message\UploadedFileProcessor;
 use Exception;
-use Psr\Log\LoggerInterface;
-use SimpleXMLElement;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
-use XMLReader;
 
 #[AsMessageHandler]
 class ProductCreatorHandler
 {
     public function __construct(
-        private ProductRepositoryPersist $productRepositoryPersist,
-        private CategoryRepositoryRead $categoryRepositoryRead,
-        private CategoryRepositoryPersist $categoryRepositoryPersist,
+        private readonly ProductRepositoryPersist  $productRepositoryPersist,
+        private readonly CategoryRepositoryRead    $categoryRepositoryRead,
+        private readonly CategoryRepositoryPersist $categoryRepositoryPersist,
     )
     {
     }

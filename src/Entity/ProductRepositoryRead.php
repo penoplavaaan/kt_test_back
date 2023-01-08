@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
+use App\Filter\Filter;
 use App\Resources\Statistics\ShowStatisticsResource;
 
 interface ProductRepositoryRead
 {
-    public function list(): array;
-    public function index(string $query, string $filterBy, string $filterValue, int $limit, int $offset): array;
+    public function index(string $query, Filter $filter, int $limit, int $offset): array;
 
-    public function count(string $query, ?string $filterBy, ?string $filterValue): int;
+    public function count(string $query, Filter $filter): int;
 
     public function getStatistics(): ShowStatisticsResource;
 }

@@ -9,14 +9,13 @@ use App\Entity\Category;
 use App\Entity\Product;
 use App\Entity\ProductRepositoryPersist;
 use App\Entity\ProductRepositoryRead;
+use App\Filter\ProductFilter;
 use App\Resources\Statistics\ShowStatisticsResource;
 use Doctrine\DBAL\Exception;
-use Doctrine\ORM\AbstractQuery;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\Query;
-use Doctrine\ORM\Query\ResultSetMapping;
-use PhpParser\Builder;
+use \App\Filter\Filter;
 
 final class ProductRepository extends DoctrineRepository implements ProductRepositoryRead, ProductRepositoryPersist
 {
@@ -31,25 +30,7 @@ final class ProductRepository extends DoctrineRepository implements ProductRepos
     /**
      * @return Product[]
      */
-    public function list(): array
-    {
-        return $this->em()
-            ->createQueryBuilder()
-            ->select([
-                'products.id',
-                'products.title',
-                'products.description',
-                'products.categoryId'
-            ])
-            ->from($this->getEntityName(), 'products')
-            ->getQuery()
-            ->getResult();
-    }
-
-    /**
-     * @return Product[]
-     */
-    public function index(string $query, ?string $filterBy, ?string $filterValue, int $limit, int $offset): array
+    public function index(string $query, ProductFilter|Filter $filter, int $limit, int $offset): array
     {
         $query = $this->em()
             ->createQueryBuilder()
@@ -67,6 +48,9 @@ final class ProductRepository extends DoctrineRepository implements ProductRepos
             ->orWhere('products.description LIKE :query')
             ->setParameter('query', '%' . $query . '%');
 
+        $filterBy = $filter->getFilterBy();
+        $filterValue = $filter->getFilterValue();
+
         if (!is_null($filterBy) && !is_null($filterValue)) {
             $query = $query->andWhere('products.category_id = :filterValue')
                 ->setParameter('filterValue', $filterValue);
@@ -82,7 +66,7 @@ final class ProductRepository extends DoctrineRepository implements ProductRepos
      * @param string $query
      * @return int
      */
-    public function count(string $query, ?string $filterBy, ?string $filterValue): int
+    public function count(string $query, ProductFilter|Filter $filter): int
     {
         $query = $this->em()
             ->createQueryBuilder()
@@ -91,6 +75,9 @@ final class ProductRepository extends DoctrineRepository implements ProductRepos
             ->orWhere('products.description LIKE :query')
             ->from($this->getEntityName(), 'products')
             ->setParameter('query', '%' . $query . '%');
+
+        $filterBy = $filter->getFilterBy();
+        $filterValue = $filter->getFilterValue();
 
         if (!is_null($filterBy) && !is_null($filterValue)) {
             $query = $query->andWhere('products.category_id = :filterValue')

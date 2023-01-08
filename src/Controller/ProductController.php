@@ -21,7 +21,6 @@ class ProductController extends AbstractController
         $filterBy = $request->query->get('filterBy');
         $filterValue = $request->query->get('filterValue');
 
-
         $products = $handler->handle($query, $filterBy, $filterValue, $page, $limit);
 
         return new JsonResponse($products);

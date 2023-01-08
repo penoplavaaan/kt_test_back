@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Util;
+namespace App\Filter;
 
-interface Filterable
+interface Filter
 {
     public function getFilterableFields(): array;
 

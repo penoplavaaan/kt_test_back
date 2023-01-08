@@ -2,18 +2,64 @@
 
 namespace App\Tests\Controller;
 
-use ApiPlatform\Symfony\Bundle\Test\ApiTestCase;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class ProductControllerTest extends ApiTestCase
+class ProductControllerTest extends WebTestCase
 {
-    public function testList(): void
+    public function testListWithNoParams(): void
     {
         $response = static::createClient()
-            ->request('GET', '/api/products');
+            ->request(
+                method: 'GET',
+                uri: '/api/products',
+            );
 
         $this->assertResponseIsSuccessful();
-//        $this->assertJsonContains(['@id' => '/']);
     }
+
+    public function testListWithNegativePage(): void
+    {
+        $response = static::createClient()
+            ->request(
+                method: 'GET',
+                uri: '/api/products',
+                parameters: [
+                    'page' => -1
+                ]
+            );
+
+        $this->assertResponseIsSuccessful();
+    }
+
+    public function testListWithNotFirstPage(): void
+    {
+        $response = static::createClient()
+            ->request(
+                method: 'GET',
+                uri: '/api/products',
+                parameters: [
+                    'page' => 2
+                ]
+            );
+
+        $this->assertResponseIsSuccessful();
+    }
+
+    public function testListWithFilter(): void
+    {
+        $response = static::createClient()
+            ->request(
+                method: 'GET',
+                uri: '/api/products',
+                parameters: [
+                    'filterBy' => 'category_id',
+                    'filterValue' => 1
+                ]
+            );
+
+        $this->assertResponseIsSuccessful();
+    }
+
     public function testGetStatistics(): void
     {
         $response = static::createClient()
@@ -29,6 +75,5 @@ class ProductControllerTest extends ApiTestCase
             ->request('GET', '/api/products/statistics');
 
         $this->assertResponseIsSuccessful();
-
     }
 }
