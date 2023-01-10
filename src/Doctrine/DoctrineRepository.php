@@ -4,18 +4,14 @@ declare(strict_types=1);
 
 namespace App\Doctrine;
 
-use App\Kernel;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\Persistence\ObjectRepository;
-use Psr\Log\LoggerInterface;
 
 abstract class DoctrineRepository
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
-        private readonly LoggerInterface $logger,
-        private readonly Kernel $kernel
+        private readonly EntityManagerInterface $em
     )
     {
     }
@@ -36,8 +32,6 @@ abstract class DoctrineRepository
      */
     protected function persist($entity): void
     {
-
-        $this->logger->critical('ENV '.$this->kernel->getEnvironment());
         $this->em()->persist($entity);
         $this->em()->flush($entity);
     }

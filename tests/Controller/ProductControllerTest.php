@@ -177,6 +177,12 @@ class ProductControllerTest extends ApiTestCase
         ]);
     }
 
+    /**
+     * @throws TransportExceptionInterface
+     * @throws ServerExceptionInterface
+     * @throws RedirectionExceptionInterface
+     * @throws ClientExceptionInterface
+     */
     public function testGetStatistics()
     {
         $client = static::createClient();
@@ -200,9 +206,12 @@ class ProductControllerTest extends ApiTestCase
         $this->assertEquals($response->leastPopularCategories, $response->mostPopularCategories);
     }
 
+    /**
+     * @throws TransportExceptionInterface
+     */
     public function testDownloadStatistics(): void
     {
-        $response = static::createClient()
+        static::createClient()
             ->request('GET', '/api/products/statistics/download');
 
         $this->assertResponseIsSuccessful();

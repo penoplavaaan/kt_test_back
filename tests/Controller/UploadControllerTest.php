@@ -2,17 +2,11 @@
 
 namespace App\Tests\Controller;
 
-use ApiPlatform\Symfony\Bundle\Test\ApiTestCase;
-use App\Controller\UploadController;
-use App\Handler\ProductCreate;
 use Exception;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Messenger\Transport\InMemoryTransport;
-use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
 class UploadControllerTest extends WebTestCase
 {
@@ -101,7 +95,7 @@ class UploadControllerTest extends WebTestCase
         $this->assertResponseStatusCodeSame(Response::HTTP_UNSUPPORTED_MEDIA_TYPE);
     }
 
-    /** Симулируем работу метода UploadController::upload
+    /** Симулируем работу метода UploadController->upload()
      * без выполнения задач в очереди
      */
     public function testGetUploadTasksCount(): void
