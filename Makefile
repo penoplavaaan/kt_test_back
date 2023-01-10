@@ -2,7 +2,7 @@ up-d: ## Поднять контейнеры
 	docker-compose up -d
 
 build: ## Сбилдить контейнеры
-	docker-compose up -d --build && docker-compose exec php ./vendor/bin/phpunit --coverage-html html
+	docker-compose up -d --build && make migrate && make test
 
 migrate: ## Миграции
 	docker-compose exec php composer migrate
