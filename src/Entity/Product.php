@@ -14,8 +14,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Product
 {
-    private const WEIGHT_KG = 'kg';
-    private const WEIGHT_GR = 'g';
+    public const WEIGHT_KG = 'kg';
+    public const WEIGHT_GR = 'g';
 
     /**
      * @ORM\Id()

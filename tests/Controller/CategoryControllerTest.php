@@ -2,9 +2,9 @@
 
 namespace App\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use ApiPlatform\Symfony\Bundle\Test\ApiTestCase;
 
-class CategoryControllerTest extends WebTestCase
+class CategoryControllerTest extends ApiTestCase
 {
     public function testList(): void
     {

@@ -53,6 +53,16 @@ final class CategoryRepository extends DoctrineRepository implements CategoryRep
     }
 
     /**
+     * @param int $id
+     *
+     * @return Category|null
+     */
+    public function getById(int $id): ?Category
+    {
+        return $this->repository()->findOneBy(['id' => $id]);
+    }
+
+    /**
      * @param Category $category
      * @return void
      */

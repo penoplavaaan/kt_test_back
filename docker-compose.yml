@@ -40,7 +40,7 @@ services:
     volumes:
       - .:/var/www/web
       - ./docker/php/php.ini:/usr/local/etc/php/conf.d/custom.ini
-    command: php bin/console messenger:consume async
+    command: php bin/console messenger:consume
     restart: unless-stopped
     depends_on:
       - database

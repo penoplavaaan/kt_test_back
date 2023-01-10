@@ -22,7 +22,10 @@ class UploadController extends AbstractController
     {
         $file = $request->files->get('products');
         if (is_null($file)) {
-            return new JsonResponse(status: Response::HTTP_UNPROCESSABLE_ENTITY);
+            return new JsonResponse(
+                data: 'No file provided',
+                status: Response::HTTP_UNPROCESSABLE_ENTITY
+            );
         }
 
         $ext = $file->guessExtension();
@@ -35,7 +38,12 @@ class UploadController extends AbstractController
 
         $handler->handle($fileName);
 
-        return new JsonResponse(status: Response::HTTP_OK);
+        return new JsonResponse(
+            data: [
+                'filename' => $fileName
+            ],
+            status: Response::HTTP_OK
+        );
 
     }
 

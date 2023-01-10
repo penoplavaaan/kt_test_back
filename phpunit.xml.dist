@@ -16,16 +16,21 @@
         <server name="SHELL_VERBOSITY" value="-1" />
         <server name="SYMFONY_PHPUNIT_REMOVE" value="" />
         <server name="SYMFONY_PHPUNIT_VERSION" value="9.5" />
-        <server name="KERNEL_CLASS" value="App\Kernel" /><env name="APP_DATABASE_NAME" value="employee"/>
+        <server name="KERNEL_CLASS" value="App\Kernel" />
+        <env name="APP_DATABASE_NAME" value="employee"/>
         <env name="APP_DATABASE_HOST" value="database"/>
         <env name="APP_DATABASE_PORT" value="5450"/>
         <env name="APP_DATABASE_USER" value="user"/>
         <env name="APP_DATABASE_SECRET" value="pass"/>
         <env name="APP_DATABASE_DRIVER" value="pdo_pgsql"/>
+        <env name="MESSENGER_TRANSPORT_DSN" value="redis://redis"/>
     </php>
 
     <testsuites>
         <testsuite name="Project Test Suite">
+            <file>tests/Controller/CategoryControllerTest.php</file>
+            <file>tests/Controller/UploadControllerTest.php</file>
+            <file>tests/Controller/ProductControllerTest.php</file>
             <directory>tests</directory>
         </testsuite>
     </testsuites>
@@ -39,6 +44,7 @@
             <directory>src/Entity</directory>
             <directory>src/Message</directory>
             <directory>src/MessageHandler</directory>
+            <directory>src/DataFixtures</directory>
         </exclude>
     </coverage>
 
