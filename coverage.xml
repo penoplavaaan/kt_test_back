@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1673365851">
-  <project timestamp="1673365851">
+<coverage generated="1673369041">
+  <project timestamp="1673369041">
     <file name="/var/www/web/src/Controller/CategoryController.php">
       <class name="App\Controller\CategoryController" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
@@ -68,20 +68,20 @@
       <class name="App\Filter\ProductFilter" namespace="global">
         <metrics complexity="6" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="14" coveredelements="14"/>
       </class>
-      <line num="10" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="4"/>
-      <line num="12" type="stmt" count="4"/>
+      <line num="10" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="5"/>
+      <line num="12" type="stmt" count="5"/>
       <line num="13" type="stmt" count="1"/>
       <line num="14" type="stmt" count="1"/>
-      <line num="16" type="stmt" count="3"/>
-      <line num="17" type="stmt" count="3"/>
-      <line num="21" type="method" name="getFilterBy" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="23" type="stmt" count="4"/>
-      <line num="26" type="method" name="getFilterValue" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="28" type="stmt" count="4"/>
-      <line num="31" type="method" name="getFilterableFields" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="33" type="stmt" count="4"/>
-      <line num="36" type="method" name="canFilterBy" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="38" type="stmt" count="4"/>
+      <line num="16" type="stmt" count="4"/>
+      <line num="17" type="stmt" count="4"/>
+      <line num="21" type="method" name="getFilterBy" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="23" type="stmt" count="5"/>
+      <line num="26" type="method" name="getFilterValue" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="28" type="stmt" count="5"/>
+      <line num="31" type="method" name="getFilterableFields" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="33" type="stmt" count="5"/>
+      <line num="36" type="method" name="canFilterBy" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="38" type="stmt" count="5"/>
       <metrics loc="40" ncloc="40" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="14" coveredelements="14"/>
     </file>
     <file name="/var/www/web/src/Handler/CategoryList.php">
@@ -141,10 +141,10 @@
     </file>
     <file name="/var/www/web/src/Repository/CategoryRepository.php">
       <class name="App\Repository\CategoryRepository" namespace="global">
-        <metrics complexity="5" methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="10" elements="18" coveredelements="12"/>
+        <metrics complexity="5" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="18" coveredelements="18"/>
       </class>
-      <line num="24" type="method" name="getEntityName" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="26" type="stmt" count="1"/>
+      <line num="24" type="method" name="getEntityName" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="26" type="stmt" count="3"/>
       <line num="32" type="method" name="list" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="34" type="stmt" count="1"/>
       <line num="35" type="stmt" count="1"/>
@@ -155,20 +155,20 @@
       <line num="40" type="stmt" count="1"/>
       <line num="41" type="stmt" count="1"/>
       <line num="42" type="stmt" count="1"/>
-      <line num="50" type="method" name="getByName" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="52" type="stmt" count="0"/>
-      <line num="60" type="method" name="getById" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="62" type="stmt" count="0"/>
-      <line num="69" type="method" name="save" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="71" type="stmt" count="0"/>
-      <metrics loc="73" ncloc="53" classes="1" methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="10" elements="18" coveredelements="12"/>
+      <line num="50" type="method" name="getByName" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="52" type="stmt" count="2"/>
+      <line num="60" type="method" name="getById" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="62" type="stmt" count="1"/>
+      <line num="69" type="method" name="save" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="71" type="stmt" count="1"/>
+      <metrics loc="73" ncloc="53" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="18" coveredelements="18"/>
     </file>
     <file name="/var/www/web/src/Repository/ProductRepository.php">
       <class name="App\Repository\ProductRepository" namespace="global">
-        <metrics complexity="9" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="78" coveredstatements="77" elements="83" coveredelements="81"/>
+        <metrics complexity="9" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="78" coveredstatements="78" elements="83" coveredelements="83"/>
       </class>
-      <line num="25" type="method" name="getEntityName" visibility="public" complexity="1" crap="1" count="7"/>
-      <line num="27" type="stmt" count="7"/>
+      <line num="25" type="method" name="getEntityName" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="27" type="stmt" count="8"/>
       <line num="33" type="method" name="index" visibility="public" complexity="3" crap="3" count="4"/>
       <line num="35" type="stmt" count="4"/>
       <line num="36" type="stmt" count="4"/>
@@ -194,23 +194,23 @@
       <line num="60" type="stmt" count="4"/>
       <line num="61" type="stmt" count="4"/>
       <line num="62" type="stmt" count="4"/>
-      <line num="69" type="method" name="count" visibility="public" complexity="3" crap="3" count="4"/>
-      <line num="71" type="stmt" count="4"/>
-      <line num="72" type="stmt" count="4"/>
-      <line num="73" type="stmt" count="4"/>
-      <line num="74" type="stmt" count="4"/>
-      <line num="75" type="stmt" count="4"/>
-      <line num="76" type="stmt" count="4"/>
-      <line num="77" type="stmt" count="4"/>
-      <line num="79" type="stmt" count="4"/>
-      <line num="80" type="stmt" count="4"/>
-      <line num="82" type="stmt" count="4"/>
+      <line num="69" type="method" name="count" visibility="public" complexity="3" crap="3" count="5"/>
+      <line num="71" type="stmt" count="5"/>
+      <line num="72" type="stmt" count="5"/>
+      <line num="73" type="stmt" count="5"/>
+      <line num="74" type="stmt" count="5"/>
+      <line num="75" type="stmt" count="5"/>
+      <line num="76" type="stmt" count="5"/>
+      <line num="77" type="stmt" count="5"/>
+      <line num="79" type="stmt" count="5"/>
+      <line num="80" type="stmt" count="5"/>
+      <line num="82" type="stmt" count="5"/>
       <line num="83" type="stmt" count="1"/>
       <line num="84" type="stmt" count="1"/>
-      <line num="87" type="stmt" count="4"/>
-      <line num="88" type="stmt" count="4"/>
-      <line num="95" type="method" name="save" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="97" type="stmt" count="0"/>
+      <line num="87" type="stmt" count="5"/>
+      <line num="88" type="stmt" count="5"/>
+      <line num="95" type="method" name="save" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="97" type="stmt" count="1"/>
       <line num="105" type="method" name="getStatistics" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="107" type="stmt" count="3"/>
       <line num="108" type="stmt" count="3"/>
@@ -250,7 +250,7 @@
       <line num="155" type="stmt" count="3"/>
       <line num="156" type="stmt" count="3"/>
       <line num="157" type="stmt" count="3"/>
-      <metrics loc="159" ncloc="140" classes="1" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="78" coveredstatements="77" elements="83" coveredelements="81"/>
+      <metrics loc="159" ncloc="140" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="78" coveredstatements="78" elements="83" coveredelements="83"/>
     </file>
     <file name="/var/www/web/src/Resources/MetaPaginatedResource.php">
       <class name="App\Resources\MetaPaginatedResource" namespace="global">
@@ -340,6 +340,6 @@
       <line num="55" type="stmt" count="4"/>
       <metrics loc="57" ncloc="39" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="15" coveredelements="15"/>
     </file>
-    <metrics files="16" loc="704" ncloc="629" classes="15" methods="38" coveredmethods="34" conditionals="0" coveredconditionals="0" statements="208" coveredstatements="204" elements="246" coveredelements="238"/>
+    <metrics files="16" loc="704" ncloc="629" classes="15" methods="38" coveredmethods="38" conditionals="0" coveredconditionals="0" statements="208" coveredstatements="208" elements="246" coveredelements="246"/>
   </project>
 </coverage>

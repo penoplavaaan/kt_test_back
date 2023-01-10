@@ -28,4 +28,9 @@ class Category
     {
         $this->name = $name;
     }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
 }

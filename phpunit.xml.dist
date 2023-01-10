@@ -31,7 +31,8 @@
             <file>tests/Controller/CategoryControllerTest.php</file>
             <file>tests/Controller/UploadControllerTest.php</file>
             <file>tests/Controller/ProductControllerTest.php</file>
-            <directory>tests</directory>
+            <file>tests/Repository/CategoryRepositoryTest.php</file>
+            <file>tests/Repository/ProductRepositoryTest.php</file>
         </testsuite>
     </testsuites>
 
